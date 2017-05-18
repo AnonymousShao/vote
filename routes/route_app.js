@@ -43,9 +43,10 @@ dealFn.readFileData('database.json').then((data) => {
     // addTestUser(100);
 }, (msg) => {
     console.log(msg);
-})
+});
 
 exports.index = (req, res) => {
+
     res.render('index');
 };
 

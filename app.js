@@ -14,10 +14,8 @@ var ejs = require('ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-
 app.engine('.html', ejs.__express);
 app.set('view engine', 'html');// app.set('view engine', 'ejs');
-
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -26,7 +24,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 //获得get请求，第一个参数是匹配内容，第二个参数是匹配成功后执行的回调函数
 app.get('/vote/index', routes.index);  
@@ -42,7 +39,6 @@ app.get(/\/vote\/all\/detail\/data/, routes.detail_data);
 
 app.post(/\/vote\/register\/data/, routes.register_data);
 app.post('/vote/index/info', routes.index_info);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
